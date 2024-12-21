@@ -21,7 +21,7 @@ class Solution {
         // in stack we have 80.
         // so now we cannot have bigger element in stack(on top of 80 as we discussed,
         // if exists then we have to remove 80)
-        // but we can have smaller element. as it might be NGE for element on left.
+        // but we can have smaller element. as it might be NGE for elements on left.
         Stack<Integer> st = new Stack<>();
         int[] ans = new int[tems.length];
 
@@ -38,7 +38,7 @@ class Solution {
                 st.pop();
             }
             if (st.isEmpty()) {
-                // after popping, stack is empty
+                // after popping, stack is empty. so no next greater exists for element-i
                 ans[i] = 0;
                 st.push(i);
             } else {
