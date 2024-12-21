@@ -2,6 +2,12 @@ import java.util.HashMap;
 import java.util.Stack;
 
 class Solution {
+    // bruteforce
+    // TC: O(n^2) two loops
+    // SC: O(n) answer
+    // optimal
+    // TC:O(n) max n pushed and n pops
+    // SC: O(n) answer
     public int[] nextGreaterElement(int[] nums1, int[] nums2) {
         // same idea as daily temperature.
         // for next greater(also for prev greater),
