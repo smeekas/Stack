@@ -56,6 +56,11 @@ class Solution {
 
             if (prevMin[i] == 0) {
                 ans = Math.max(ans, (long) (prefix[nextMin[i]]) * (long) nums[i]);
+                // we have to include current element.
+                // but we cannot subtract prefix[min-1] here min is 0
+                // prefix[-1] will throw error
+                // prefix[nextMin] includes value of prefix[0]. so we don't have to subtract
+                // anything here
             } else {
                 // current element is minimum in subarray from prevMin to nextMin.
                 // sum of element from prevMin to nextMin is prefix[nextMin]-prefix[prevMin-1];
@@ -70,7 +75,7 @@ class Solution {
     }
 
     // nextSmaller and prevSmaller needs to follow either strict or non-strict
-    // ordering
+    // ordering to avoid duplicate counts
     int[] prevSmaller(int nums[], int n) {
         int ans[] = new int[n];
         Stack<Integer> st = new Stack<>();
